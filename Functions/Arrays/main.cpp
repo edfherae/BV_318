@@ -13,10 +13,12 @@ void Print(const double arr[], const int n);
 int  Sum(const int arr[], const int n);
 double Avg(const int arr[], const int n);
 
-void main()
+void Search(int arr[], const int n);
+
+int main()
 {
 	setlocale(LC_ALL, "");
-	const int n = 5;
+	const int n = 50;
 	int arr[n];
 
 	/*int minRand, maxRand;
@@ -29,13 +31,14 @@ void main()
 
 	FillRand(arr, n);
 	Print(arr, n);
-	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
+	Search(arr, n);
+	/*cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
 	cout << "Среднее-арифметическое элементов массива: " << Avg(arr, n) << endl;
 
 	const int m = 8;
 	double brr[m];
 	FillRand(brr, m);
-	Print(brr, m);
+	Print(brr, m);*/
 }
 
 void FillRand(int arr[], const int n, int minRand, int maxRand)
@@ -107,4 +110,40 @@ int  Sum(const int arr[], const int n)
 double Avg(const int arr[], const int n)
 {
 	return (double)Sum(arr, n) / n;
+}
+
+void Search(int arr[], const int n)
+{
+	cout << "Повторяющиеся элементы: ";
+	int count = 0;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (j != i && arr[j] == arr[i])
+			{
+				cout << arr[i] << tab;
+				count++;
+			}
+		}
+	}
+	cout << "\nКоличество повторений: " << count << endl;
+}
+
+void Search(int arr[], const int n)
+{
+	cout << "Повторяющиеся элементы: ";
+	int count = 0;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (j != i && arr[j] == arr[i])
+			{
+				cout << arr[i] << tab;
+				count++;
+			}
+		}
+	}
+	cout << "\nКоличество повторений: " << count << endl;
 }
