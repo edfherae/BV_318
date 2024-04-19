@@ -2,8 +2,11 @@
 #include "stdafx.h"
 #include "Constants.h"
 #include "Statistics.h"
-#include "FillRand.h"
+#include "Statistics.cpp"
+#include "FillRand.h" //почему не перегружаем?
+#include "FillRand.cpp"
 #include "Print.h"
+#include "Print.cpp"
 #include "Search.h"
 
 int main()
@@ -25,4 +28,6 @@ int main()
 
 	cout << "Сумма элементов массива: " << Sum(d_arr, D_SIZE) << endl;
 }
+
+//как создать массив внутри функции и можно ли назначить тип Т?
 
