@@ -4,20 +4,15 @@ using namespace std;
 
 #define tab "\t"
 
-template<typename T>
-void FillRand(T arr[], const int n, int minRand = 0, int maxRand = 100);
+template<typename T> void FillRand(T arr[], const int n, int minRand = 0, int maxRand = 100);
 
-template<typename T>
-void Print(const T arr[], const int n);
+template<typename T>void Print(const T arr[], const int n);
 
-template<typename T>
-T Sum(const T arr[], const int n);
+template<typename T>T Sum(const T arr[], const int n);
 
-template<typename T>
-T Avg(const T arr[], const int n);
+template<typename T>double Avg(const T arr[], const int n);
 
-template<typename T>
-void Search(const T arr[], const int& n);
+template<typename T>void Search(const T arr[], const int& n);
 
 int main()
 {
@@ -37,6 +32,12 @@ int main()
 	Print(d_arr, D_SIZE);
 
 	cout << "Сумма элементов массива: " << Sum(d_arr, D_SIZE) << endl;
+	cout << "Среднее-арифметическое элементов массива: " << Avg(d_arr, D_SIZE) << endl;
+
+	const int C_SIZE = 11;
+	char c_arr[C_SIZE];
+	FillRand(c_arr, C_SIZE);
+	Print(c_arr, C_SIZE);
 }
 
 template<typename T>
@@ -81,9 +82,9 @@ T Sum(const T arr[], const int n)
 }
 
 template<typename T>
-T Avg(const T arr[], const int n)
+double Avg(const T arr[], const int n)
 {
-	return (T)Sum(arr, n) / n;
+	return (double)Sum(arr, n) / n;
 }
 
 
